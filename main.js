@@ -42,9 +42,7 @@ function generateToken(role) {
   return token;
 }
 
-app.use('/', (req, res) => {
-  res.send('Hello World!') 
-})
+
 
 //LOGIN SECTION FOR 3 TYPES OF USERS(ADMIN,STUDENT,LECTURER)
 
