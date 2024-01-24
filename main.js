@@ -101,10 +101,10 @@ app.post('/adduser', (req, res) => {
   })
 });
 
-//ADMIN SECTION FOR VIEWING ATTENDANCE LIST
+//ADMIN SECTION FOR VIEWING USER LIST BASED ON FACULTY
 
 app.get('/list', async (req, res) => {
-  const { subject } = req.body;
+  const { faculty } = req.body;
 
   // Verify the bearer token
   const authHeader = req.headers['authorization'];
@@ -121,7 +121,7 @@ app.get('/list', async (req, res) => {
   });
   try {
     const List = await client.db("ManagementSystem").collection("attendance").find({
-      "subject": subject,
+      "faculty": faculty,
 
     }).toArray();
 
