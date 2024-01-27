@@ -122,7 +122,7 @@ app.post('/adminlist', async (req, res) => {
 
       res.send(studentList);
     } else {
-      res.send("No students found for the given subject");
+      res.send("No students or lecturerfound for the given subject");
     }
   } catch (error) {
     console.error("Error fetching student list:", error);
