@@ -103,34 +103,29 @@ app.post('/adduser', (req, res) => {
 
 //ADMIN SECTION FOR VIEWING USER LIST BASED ON FACULTY
 
-app.get('/list', async (req, res) => {
-  const { faculty } = req.body;
-
-  // Verify the bearer token
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
-
-  if (!token) {
-    return res.status(401).send('Unauthorized. Missing bearer token.');
-  }
-
-  jwt.verify(token, 'secret', (err, user) => {
-    if (err) {
-      return res.status(403).send('Forbidden. Invalid token.');
-    }
-  });
+app.post('/adminlist', async (req, res) => {
   try {
-    const List = await client.db("ManagementSystem").collection("attendance").find({
-      "faculty": faculty,
-
+    const faculty = req.body.faculty;
+    const lecturer = await client.db("ManagementSystem").collection("user").find({
+      "faculty": faculty
     }).toArray();
 
-    if (List) {
-      res.json(List);
+    if (lecturer.length > 0) {
+      const studentList = lecturer.map(record => ({
+        username: record.username,
+        student_ID: record.student_ID,
+        staff_ID: record.staff_ID,
+        subject: record.subject,
+        faculty: record.faculty,
+        role: record.role
+      }));
+
+      res.send(studentList);
     } else {
-      res.send("No record for this subject");
+      res.send("No students found for the given subject");
     }
   } catch (error) {
+    console.error("Error fetching student list:", error);
     res.status(500).send("Internal server error");
   }
 });
