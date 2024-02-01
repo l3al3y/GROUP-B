@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "cd98b97c-add1-49d8-a9d7-acce869bf2bb",
+		"name": "Cloud Request(Group-b)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30848269"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"kumar\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/login",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User(Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"kumar\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"admin\",\r\n    \"faculty\":\"FTKMP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/adduser",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User(Lecturer)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"abu\",\r\n    \"password\": \"1234\",\r\n    \"staff_ID\": \"10\",\r\n    \"role\": \"Lecturer\",\r\n    \"faculty\": \"FTKEK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/adduser",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User(Student)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Irfan\",\r\n    \"password\": \"1234\",\r\n    \"student_ID\": \"10222\",\r\n    \"role\": \"student\",\r\n    \"faculty\": \"FTKMP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/adduser",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Subject List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"faculty\":\"FKEKK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/adminlist",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"adminlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addprogram(faculty)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"program\":\"FTKEK\",\r\n    \"lecturer\":\"DrSoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/addprogram",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"addprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteprogram(faculty)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"program\":\"database\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/deleteprogram",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"deleteprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addsubject(faculty)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\":\"BENR\",\r\n    \"lecturer\":\"DrSoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/addsubject",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"addsubject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletesubject(faculty)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\":\"BENR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/deletesubject",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"deletesubject"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lecturer",
+			"item": [
+				{
+					"name": "Lecturer Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abu\",\r\n    \"password\":\"1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/login",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student list subject taken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\":\"Communication\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/Studentlist",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"Studentlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student attendance check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiTGVjdHVyZXIiLCJpYXQiOjE3MDYzNzI3NzYsImV4cCI6MTcwNjM3MzM3Nn0.cj5MovH3Riy3vwpf44-ah9hsqeFEvPvXkthWLKPI1a0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\":\"Communication\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/ViewAttendanceStudent",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"ViewAttendanceStudent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Student Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Irfan\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/login",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Attendance(Student) Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTcwNTc1OTU1OSwiZXhwIjoxNzA1NzYwMTU5fQ.XZpCw08FWukJhhPDanCvnkWdC3wxVuLkMdRC4kDNA8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Irfan\",\r\n    \"student_ID\": \"1021\",\r\n    \"attendance_status\": \"present\",\r\n    \"lecturer\": \"DrZoinol\",\r\n    \"subject\": \"Communication\",\r\n    \"faculty\": \"FTKEK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/record-attendance",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"record-attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student detail timeline",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_ID\":\"1021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://group-b.azurewebsites.net/detail-timeline",
+							"protocol": "https",
+							"host": [
+								"group-b",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"detail-timeline"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
